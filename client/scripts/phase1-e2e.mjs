@@ -18,7 +18,7 @@ const browser = await puppeteer.launch({
 try {
   const page = await browser.newPage();
   page.on("pageerror", (e) => console.log("[pageerror]", String(e).slice(0, 200)));
-  await page.goto("http://localhost:5173/", { waitUntil: "domcontentloaded" });
+  await page.goto("http://localhost:5173/#/app", { waitUntil: "domcontentloaded" }); // "/" is the landing page
   if (process.env.PHASE1_OFFLINE === "1") {
     await page.setOfflineMode(true);
     console.log("offline-mode: ON for transcription (Wi-Fi-off simulation; localhost still live)");

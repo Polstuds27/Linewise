@@ -25,6 +25,7 @@ import { redactPII } from "./lib/pii";
 import { FIRST_CALL_NUMBER, deleteAICall, getCoaching, getScorecard, loadAICalls, loadOverrides, saveAICall, saveCoaching, saveScorecard, setOverride } from "./lib/store";
 import { exportPDF } from "./lib/export";
 import { agentStats } from "./lib/agents";
+import { DEMO_CALLS, DEMO_COACHING } from "./demo/data";
 
 type Tab = "calls" | "detail" | "scorecards" | "agents" | "export";
 
@@ -111,12 +112,17 @@ const VERDICTS = {
 // for the first of these, so change them together.
 const AI_READY_TEXT = "Local AI ready (Whisper + Ollama 3B)";
 const AI_DOWN_TEXT = "Ollama is not running: start it to score calls";
+const DEMO_TEXT = "Demo: four test calls. Uploading and scoring are off.";
+
+const REPO_URL = "https://github.com/Polstuds27/Linewise";
 
 const SECTION = "grid gap-x-10 gap-y-8 lg:grid-cols-12";
 const PANEL = "animate-hang pt-12 pb-24 sm:pt-20";
 const HEADING = "display text-3xl sm:text-4xl";
 
-export default function App() {
+// `demo` is the read-only tour: it shows the calls in src/demo, keeps every change in
+// memory, and never uploads, scores, stores or deletes anything.
+export default function App({ demo = false }: { demo?: boolean }) {
   const [tab, setTab] = useState<Tab>("calls");
   const [selectedId, setSelectedId] = useState("");
   const [checks, setChecks] = useState<Check[]>(BANK_SUPPORT_V2);
@@ -125,8 +131,8 @@ export default function App() {
   // Whether the scoring model can be reached. Null until the first check has answered.
   const [aiReady, setAiReady] = useState<boolean | null>(null);
   const [aiError, setAiError] = useState("");
-  const [aiCalls, setAiCalls] = useState<DemoCall[]>([]);
-  const [coaching, setCoaching] = useState<Record<string, string>>({});
+  const [aiCalls, setAiCalls] = useState<DemoCall[]>(demo ? DEMO_CALLS : []);
+  const [coaching, setCoaching] = useState<Record<string, string>>(demo ? DEMO_COACHING : {});
   const [coachingBusy, setCoachingBusy] = useState(false);
   // Analyst decisions per check, keyed "callId:checkId". Demo-call decisions last for the session.
   // The scorecard being edited. Null means the saved scorecard is shown read-only.
@@ -145,14 +151,16 @@ export default function App() {
   useEffect(() => { aiCallsRef.current = aiCalls; }, [aiCalls]);
 
   useEffect(() => {
+    if (demo) return;
     void loadAICalls().then(setAiCalls).catch(() => {});
     void getScorecard().then(setChecks).catch(() => {});
     void loadOverrides().then((saved) => setDecisions((d) => ({ ...saved, ...d }))).catch(() => {});
-  }, []);
+  }, [demo]);
 
   // Scoring needs the local model. There is no switch: the app checks for it on load and
   // keeps checking, so the header always says whether recordings can be scored right now.
   useEffect(() => {
+    if (demo) return;
     let alive = true;
     let misses = 0;
     const check = async () => {
@@ -165,10 +173,11 @@ export default function App() {
     void check();
     const timer = setInterval(() => void check(), 5000);
     return () => { alive = false; clearInterval(timer); };
-  }, []);
+  }, [demo]);
 
   // Keep an eye on the upload server, and while the model is ready, work through its queue.
   useEffect(() => {
+    if (demo) return;
     const tick = () => {
       void refreshPhones();
       // While a recording is being scored, keep telling the server so. If this tab is
@@ -181,7 +190,7 @@ export default function App() {
     return () => clearInterval(timer);
     // refreshPhones and scoreNextFromPhones read their state through refs and setters.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [aiReady]);
+  }, [aiReady, demo]);
 
   // Every call here was really transcribed and scored. There is no sample data.
   const calls: DemoCall[] = aiCalls;
@@ -309,6 +318,7 @@ export default function App() {
           : c,
       ),
     );
+    if (demo) return;
     await setOverride(callId, checkId, verdict).catch((e: unknown) => setAiError(e instanceof Error ? e.message : String(e)));
   }
 
@@ -344,7 +354,7 @@ export default function App() {
   async function openCall(callId: string) {
     setSelectedId(callId);
     setTab("detail");
-    if (!coaching[callId]) {
+    if (!demo && !coaching[callId]) {
       const saved = await getCoaching(callId).catch(() => "");
       if (saved) setCoaching((m) => ({ ...m, [callId]: saved }));
     }
@@ -379,7 +389,7 @@ export default function App() {
   const audioUrl = selected.audio;
   const busy = queue.some((q) => queueProgress(q.status) !== null);
   const readyCount = queue.filter((q) => q.status === "ready").length;
-  const save = (next: Check[]) => { setChecks(next); void saveScorecard(next).catch(() => {}); };
+  const save = (next: Check[]) => { setChecks(next); if (!demo) void saveScorecard(next).catch(() => {}); };
   const stats = agentStats(calls, checks, decisions);
 
   const flagMarkers = grade.results
@@ -408,11 +418,18 @@ export default function App() {
       <header className="sticky top-0 z-10 bg-background">
         <div className="mx-auto flex w-full max-w-7xl flex-col gap-x-10 px-5 sm:px-8 md:h-16 md:flex-row md:items-center md:justify-between">
           <div className="flex h-14 min-w-0 items-center gap-4">
-            <Logo className="shrink-0" />
+            <a href="#/" aria-label="Linewise home" className="shrink-0"><Logo /></a>
+            {demo ? (
+              <span data-testid="demo-status" role="status" className="label flex min-w-0 items-center gap-2 text-muted-foreground">
+                <span aria-hidden className="size-2 shrink-0 rounded-full border border-muted-foreground" />
+                <span className="truncate">{DEMO_TEXT}</span>
+              </span>
+            ) : (
             <span data-testid="ai-status" role="status" className={cn("label flex min-w-0 items-center gap-2", aiReady === false ? "text-destructive" : "text-muted-foreground")}>
               <span aria-hidden className={cn("size-2 shrink-0 rounded-full border", aiReady ? "border-foreground bg-foreground" : aiReady === false ? "border-destructive bg-destructive" : "border-muted-foreground")} />
               <span className="truncate">{aiReady ? AI_READY_TEXT : aiReady === false ? AI_DOWN_TEXT : "Checking local AI…"}</span>
             </span>
+            )}
           </div>
           <nav className="-mx-5 shrink-0 overflow-x-auto px-5 sm:-mx-8 sm:px-8 md:mx-0 md:px-0">
             <TabsList className="w-max min-w-full">
@@ -431,10 +448,17 @@ export default function App() {
           <section className={SECTION}>
             <h2 className={cn(HEADING, "lg:col-span-5")}>1 · Upload &amp; queue</h2>
             <div className="flex flex-col gap-6 lg:col-span-7">
+              {demo ? (
+                <div data-testid="upload-off" className="flex min-h-48 flex-col items-center justify-center gap-3 border border-dashed border-border p-8 text-center">
+                  <p className="max-w-[38ch] font-medium">Uploading is turned off in the demo.</p>
+                  <p className="max-w-[46ch] text-sm leading-relaxed text-muted-foreground">Scoring runs on your own machine, so there is nowhere here to send a recording. The four calls below were scored by Linewise on our laptop. To score your own, <a className="text-foreground underline underline-offset-4 hover:text-primary" href={REPO_URL} target="_blank" rel="noreferrer">run Linewise yourself</a>.</p>
+                </div>
+              ) : (
               <label className="relative flex min-h-48 cursor-pointer items-center justify-center border border-dashed border-muted-foreground p-8 text-center transition-colors duration-200 hover:border-foreground has-focus-visible:border-foreground has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-ring">
                 <span className="max-w-[38ch] font-medium">Drop MP3 / WAV / M4A here or click to browse (batch)</span>
                 <input type="file" data-testid="upload" accept="audio/*,.mp3,.wav,.m4a" multiple className="absolute inset-0 cursor-pointer opacity-0" onChange={(e) => onFiles(e.target.files)} />
               </label>
+              )}
               {aiError && <p role="alert" className="border border-destructive px-4 py-3 text-sm text-destructive">{aiError}</p>}
               {aiReady === false && queue.some((q) => q.status === "ready") && (
                 <p role="alert" className="border border-destructive px-4 py-3 text-sm text-destructive">Ollama is not running, so these recordings cannot be scored yet. Start it (<code>ollama serve</code>) and the button to score them appears here.</p>
@@ -547,7 +571,7 @@ export default function App() {
                             <StatusBadge status={s.status}>{s.score === null ? `${checks.length - s.pending} of ${checks.length} reviewed` : `${s.score} / 100`} · {STATUS_LABEL[s.status]}</StatusBadge>
                           </span>
                         </button>
-                        {(pendingDelete === c.id ? (
+                        {!demo && (pendingDelete === c.id ? (
                             <span className="flex shrink-0 items-center gap-1">
                               <Button size="xs" variant="destructive" onClick={() => void removeCall(c.id)}>Delete</Button>
                               <Button size="xs" variant="ghost" onClick={() => setPendingDelete(null)}>Cancel</Button>
@@ -605,7 +629,7 @@ export default function App() {
               onMarkerClick={(m) => seek(m.ts, audioUrl)}
             />
           </div>
-          <p className="label mt-3 text-muted-foreground">{`Transcribed${selected.engine ? ` with ${selected.engine}` : ""} and scored on this laptop. Nothing was sent anywhere else.`}{" "}
+          <p className="label mt-3 text-muted-foreground">{`Transcribed${selected.engine ? ` with ${selected.engine}` : ""} and scored ${demo ? "on our laptop when this demo was made" : "on this laptop"}. Nothing was sent anywhere else.`}{" "}
             {selected.speakers === "voice" && "Mono recording: the two voices were told apart by sound, and which one is the agent was worked out from what they said, so check the speaker labels. "}
             {selected.speakers === "unknown" && "The speakers could not be told apart, so the checks are less reliable. "} Click any timestamp or flag tick to play from there.</p>
           <div className="mt-16 grid gap-x-10 gap-y-16 lg:grid-cols-12">
@@ -675,7 +699,7 @@ export default function App() {
               <ScoreLegend className="mt-6" />
               <div className="mt-8 flex flex-wrap gap-2">
                 <Button onClick={() => exportPDF(selected, checks, decisions)}>Export PDF</Button>
-                {(pendingDelete === selected.id ? (
+                {!demo && (pendingDelete === selected.id ? (
                     <>
                       <Button variant="destructive" onClick={() => { void removeCall(selected.id); setTab("calls"); }}>Delete this call and its recording</Button>
                       <Button variant="ghost" onClick={() => setPendingDelete(null)}>Cancel</Button>
@@ -691,9 +715,13 @@ export default function App() {
                 ) : (
                   <p className="text-muted-foreground">No note yet for this call.</p>
                 )}
+                {demo ? (
+                  <p className="label max-w-[48ch] text-muted-foreground">Written by the local model when this call was scored. Writing a new one is off in the demo.</p>
+                ) : (
                 <Button variant="secondary" disabled={!aiReady || coachingBusy} onClick={() => void makeCoachingNote()}>
                   {coachingBusy ? "Writing…" : "Generate note"}
                 </Button>
+                )}
               </div>
             </div>
           </div>
@@ -704,7 +732,7 @@ export default function App() {
         <TabsContent value="scorecards" className={cn(PANEL, SECTION)}>
           <div className="flex flex-col gap-5 lg:col-span-5">
             <h2 className={HEADING}>4 · Scorecard editor</h2>
-            <p className="max-w-[48ch] text-muted-foreground">The rules every call is checked against. Weights must total 100. Changes are saved in this browser and apply to the next call you score.</p>
+            <p className="max-w-[48ch] text-muted-foreground">The rules every call is checked against. Weights must total 100. {demo ? "In the demo, your changes rescore the four calls straight away and are forgotten when you leave." : "Changes are saved in this browser and apply to the next call you score."}</p>
             {draft ? (
               <Button variant="outline" className="self-start" onClick={() => setDraft(BANK_SUPPORT_V2)}>Reset to preset</Button>
             ) : (
@@ -823,13 +851,17 @@ export default function App() {
               </div>
             </div>
             <div className="lg:col-span-7">
+              {demo ? (
+                <p data-testid="devices-off" className="max-w-[52ch] border border-dashed border-border p-8 text-sm leading-relaxed text-muted-foreground"><span className="font-medium text-foreground">Adding agents is turned off in the demo.</span> On your own machine this is where each agent gets an upload link and a QR code, and where you see when their phone last sent a recording.</p>
+              ) : (
               <Devices online={phones.online} info={phones.info} agents={phones.agents} onChange={() => void refreshPhones()} />
+              )}
             </div>
           </section>
           <section className={SECTION}>
           <div className="flex flex-col gap-5 lg:col-span-5">
             <h2 className={HEADING}>5 · Agent dashboard</h2>
-            <p className="max-w-[48ch] text-muted-foreground">Averages and most-missed checks across all calls on this machine.</p>
+            <p className="max-w-[48ch] text-muted-foreground">{demo ? "Averages and most-missed checks across the four demo calls." : "Averages and most-missed checks across all calls on this machine."}</p>
           </div>
           <div className="flex flex-col gap-10 lg:col-span-7">
             {stats.length === 0 ? (

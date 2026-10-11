@@ -57,7 +57,7 @@ ollama serve                   # keep running while the app runs
 cd client
 npm install
 npm run models                 # once: speech models into public/models and public/ort
-npm run dev                    # app at http://localhost:5173
+npm run dev                    # http://localhost:5173 (landing page; the app is at #/app)
 
 # optional
 brew install whisper-cpp && npm run whisper     # native Whisper large-v3-turbo

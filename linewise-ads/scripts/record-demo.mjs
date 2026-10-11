@@ -249,7 +249,8 @@ const openApp = async (name, extraArgs = []) => {
   page.on("pageerror", (error) =>
     console.log(`[${name}] page error:`, String(error).slice(0, 200)),
   );
-  await page.goto(APP_URL, { waitUntil: "networkidle2" });
+  // The landing page is at "/"; the app itself is at "#/app".
+  await page.goto(`${APP_URL}#/app`, { waitUntil: "networkidle2" });
   // No switch to click: the app checks Ollama by itself and says so in the header.
   await page.waitForFunction(
     () =>

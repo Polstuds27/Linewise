@@ -263,6 +263,24 @@ shadcn/ui components (Base UI, `base-nova`) live in `src/components/ui/` and hav
 - **Delete:** a ghost trash icon beside an uploaded call. It asks first: the icon is replaced by a `destructive` Delete button and a ghost Cancel.
 - **Empty state:** `Empty` with a title and one line saying how to get results back. No border.
 
+## Landing page
+
+`src/landing.tsx` is the one page that persuades instead of being a tool, so it is allowed
+more room than the app: the page heading goes up to 5.5rem, section headings to 3rem, and
+sections are 7rem apart with a hairline between them. Everything else is the same wall:
+one family, the 5 and 7 column split, hairline lists instead of cards, pills only for
+buttons and badges, no shadows or gradients.
+
+- **The first thing on it is a real call.** Under the heading sits a test call exactly as
+  the app shows it: the audio player with its flag ticks, the transcript, and the two
+  critical flags. It is read from `src/demo/calls.json`, so it cannot drift from what the
+  pipeline produces. The moving waveform is still the only motion.
+- **One cobalt button per viewport:** "Try the demo" in the opening and again at the close.
+  The same link in the bar is an outline button.
+- **Every example line is labelled as coming from a test call**, with the date it was scored.
+- **Numbers** on it are the measured ones from the README, said in a sentence with the
+  machine and date. No stat tiles.
+
 ## Do's and Don'ts
 
 ### Do:

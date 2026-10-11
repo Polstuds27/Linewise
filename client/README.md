@@ -24,7 +24,7 @@ Needs Node 20 or newer. The commands are the same in PowerShell, bash and zsh.
 cd client
 npm install
 npm run models  # once per machine: downloads the speech models (about 300 MB, needs internet)
-npm run dev     # the header shows "Local AI ready" once ollama serve (below) is running
+npm run dev     # opens the landing page; the app is at #/app and says "Local AI ready" once ollama serve (below) is running
 npm run build   # tsc + vite build
 npm run lint    # oxlint
 npm run whisper # optional, macOS: native Whisper large-v3-turbo (faster and more accurate)
@@ -33,6 +33,7 @@ node scripts/phase1-e2e.mjs  # full upload→transcribe→score browser test
 npm run eval    # checks the scoring prompt against 18 scripted calls (needs ollama)
 npm run eval:redaction  # checks redaction against 9 scripted calls (needs ollama)
 npm run benchmark       # times the three sample recordings end to end on this machine
+npm run demo:data       # rebuilds the read-only demo's calls by running the real pipeline (needs ollama)
 ```
 
 Ollama prerequisite: `ollama serve` with `OLLAMA_ORIGINS` including

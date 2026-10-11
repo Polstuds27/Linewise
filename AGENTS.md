@@ -13,13 +13,25 @@ Submission due 10:00 AM Oct 10 — working product over slides.
 ## Layout
 
 - `client/` — Vite 8 + React 19 + TS + Tailwind v4 SPA. The app.
+- `client/src/main.tsx` mounts `Root.tsx`, which picks one of three places from the
+  address after the `#`: `/` the landing page (`landing.tsx`), `/demo` the read-only demo,
+  `/app` the real app. `/app` is only offered on localhost, because a hosted copy cannot
+  reach the visitor's Ollama; anywhere else it falls back to the demo. Test scripts open
+  `#/app`.
+- `client/src/demo/` — the read-only demo's data. `calls.json` is written by
+  `scripts/make-demo-data.mjs` (`npm run demo:data`): it is what the real app stored after
+  scoring the four recordings in `samples/`, so re-run it after changing the pipeline,
+  prompts or scorecard. `data.ts` only assigns agent names and call numbers. Their audio
+  is copied to `client/public/demo/`. In the demo (`<App demo />`) nothing is uploaded,
+  scored, stored or deleted; decisions and scorecard edits live in memory only.
 - `client/src/App.tsx` — all 5 screens. The scorecard editor can add, reword, retype
   and remove checks (each with an optional "how to judge it" note that is sent to the
   model); uploaded calls can be deleted from the Calls list or call detail, which also
   removes the stored recording; a queue row shows a spinner and a progress line while it
   is processed. `mock.ts` — only the types of a scored call now (`DemoCall`,
-  `TranscriptLine`, `callTitle`). The app ships with no sample data: every call shown was
-  really transcribed and scored, and a fresh install starts empty.
+  `TranscriptLine`, `callTitle`). The real app ships with no sample data: every call shown was
+  really transcribed and scored, and a fresh install starts empty. Only the demo shows the
+  four test calls, and says so in its header.
 - `client/src/ai/` — working local pipeline: `whisper.ts` + `speech.worker.ts`
   (Whisper base and pyannote speaker separation, Web Worker), `ollama.ts` (qwen2.5:3b scoring), `backend.ts`
   (the scoring backend: Ollama only), `coaching.ts` (notes),
@@ -56,7 +68,7 @@ Submission due 10:00 AM Oct 10 — working product over slides.
   moves at the playhead during playback. Plain `<audio>` underneath.
 - `client/samples/call-*.m4a` — three scripted test recordings to upload and score, built
   by `client/scripts/make_sample_calls.py` (macOS `say` voices; stereo, agent left,
-  customer right). They are not part of the app and are not served by it. Synthetic voices
+  customer right). The real app does not load them; copies in `public/demo/` are played by the demo and the landing page. Synthetic voices
   on scripted calls: test input, never an accuracy benchmark. `call-147.m4a` is the spec's scenario
   (card read back, no identity check) and should score 62 with the preset scorecard.
 - `client/scripts/` — `phase1-e2e.mjs` (full
@@ -106,6 +118,7 @@ node scripts/phase1-e2e.mjs                # whole-piece E2E (needs dev + ollama
 npm run eval                               # scoring regression check (needs ollama up)
 npm run eval:redaction                     # redaction regression check (needs ollama up)
 npm run benchmark                          # times the three sample calls end to end (needs ollama up)
+npm run demo:data                          # rebuilds the demo's calls with the real pipeline (needs ollama up)
 ```
 
 `phase1-e2e.mjs` has a Windows Chrome path and profile directory hard-coded; change them

@@ -18,7 +18,9 @@ import puppeteer from "puppeteer-core";
 const client = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const RUNS = Number(process.argv[2] ?? 3);
 const PORT = 5199;
-const APP = `http://localhost:${PORT}/`;
+const ORIGIN = `http://localhost:${PORT}/`;
+// The landing page is at "/"; the app itself is at "#/app".
+const APP = `${ORIGIN}#/app`;
 const NATIVE_WHISPER = "http://localhost:8178";
 const SAMPLES = ["call-147.m4a", "call-148.m4a", "call-149.m4a"];
 const CHROME =
@@ -48,7 +50,7 @@ const vite = spawn("npx", ["vite", "--port", String(PORT), "--strictPort"], {
 });
 const stop = () => vite.kill();
 process.on("exit", stop);
-for (let i = 0; i < 120 && !(await up(APP)); i++) await sleep(500);
+for (let i = 0; i < 120 && !(await up(ORIGIN)); i++) await sleep(500);
 
 // Presses the button on the newest queue row and watches its status text change.
 const timeOneCall = (page) =>

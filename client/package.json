@@ -13,6 +13,7 @@
     "whisper": "node scripts/native-whisper.mjs",
     "eval:redaction": "node scripts/eval-redaction.mjs",
     "benchmark": "node scripts/benchmark.mjs",
+    "demo:data": "node scripts/make-demo-data.mjs",
     "server": "npm --prefix ../server start"
   },
   "dependencies": {
