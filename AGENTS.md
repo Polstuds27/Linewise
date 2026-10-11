@@ -20,9 +20,12 @@ Submission due 10:00 AM Oct 10 — working product over slides.
   `#/app`.
 - `client/src/demo/` — the read-only demo's data. `calls.json` is written by
   `scripts/make-demo-data.mjs` (`npm run demo:data`): it is what the real app stored after
-  scoring the four recordings in `samples/`, so re-run it after changing the pipeline,
-  prompts or scorecard. `data.ts` only assigns agent names and call numbers. Their audio
-  is copied to `client/public/demo/`. In the demo (`<App demo />`) nothing is uploaded,
+  scoring the four recordings in `samples/demo/`, so re-run it after changing the pipeline,
+  prompts or scorecard. Those recordings are made by `python3 scripts/make_sample_calls.py
+  --demo`: the same scripted scenarios with the team's first names as the agents (Ian 147,
+  Paul 148, Patrick 149, Limuel 150), stereo, two voices each. `data.ts` only says which
+  agent and call number each is listed under. After regenerating, copy the audio to
+  `client/public/demo/`. In the demo (`<App demo />`) nothing is uploaded,
   scored, stored or deleted; decisions and scorecard edits live in memory only.
 - `client/src/App.tsx` — all 5 screens. The scorecard editor can add, reword, retype
   and remove checks (each with an optional "how to judge it" note that is sent to the
@@ -68,7 +71,7 @@ Submission due 10:00 AM Oct 10 — working product over slides.
   moves at the playhead during playback. Plain `<audio>` underneath.
 - `client/samples/call-*.m4a` — three scripted test recordings to upload and score, built
   by `client/scripts/make_sample_calls.py` (macOS `say` voices; stereo, agent left,
-  customer right). The real app does not load them; copies in `public/demo/` are played by the demo and the landing page. Synthetic voices
+  customer right). The real app does not load them. The demo and the landing page play the separate set in `samples/demo/` (copied to `public/demo/`). Synthetic voices
   on scripted calls: test input, never an accuracy benchmark. `call-147.m4a` is the spec's scenario
   (card read back, no identity check) and should score 62 with the preset scorecard.
 - `client/scripts/` — `phase1-e2e.mjs` (full

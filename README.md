@@ -233,8 +233,9 @@ The address above opens a landing page. From it there are two ways in:
 - **Open the app** (`#/app`): the real thing. It needs Ollama on the same machine, so it is
   only offered when the page is opened from `localhost`.
 - **Try the demo** (`#/demo`): a read-only tour that works anywhere, with no setup. It shows
-  four test calls that Linewise scored on our laptop (`client/src/demo/calls.json`, written
-  by `npm run demo:data`). You can play them, click flags, confirm or dismiss verdicts,
+  four scripted test calls that Linewise scored on our laptop (`client/src/demo/calls.json`,
+  written by `npm run demo:data` from the recordings in `client/samples/demo/`). The agents
+  in them carry our own first names. You can play them, click flags, confirm or dismiss verdicts,
   change the scorecard and download a redacted PDF. Uploading, scoring, adding agents and
   deleting are switched off, and nothing you change is kept.
 

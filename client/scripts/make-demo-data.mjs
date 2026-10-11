@@ -1,5 +1,6 @@
 // Builds the calls the read-only demo shows (src/demo/calls.json) by running the real
-// app on the recordings in samples/: nothing in that file is typed by hand.
+// app on the recordings in samples/demo/ (made by `python3 scripts/make_sample_calls.py
+// --demo`): nothing in that file is typed by hand.
 //
 //   node scripts/make-demo-data.mjs
 //
@@ -17,7 +18,7 @@ import puppeteer from "puppeteer-core";
 const client = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const PORT = 5198;
 const APP = `http://localhost:${PORT}/#/app`;
-const SAMPLES = ["call-147.m4a", "call-148.m4a", "call-149.m4a", "call-sample.wav"];
+const SAMPLES = ["call-147.m4a", "call-148.m4a", "call-149.m4a", "call-150.m4a"];
 const CHROME =
   process.env.CHROME ??
   (process.platform === "win32"
@@ -63,7 +64,7 @@ try {
     await tab("Calls");
     await page.waitForSelector('[data-testid="upload"]');
     await page.$eval('[data-testid="upload"]', (el) => { el.value = ""; });
-    await (await page.$('[data-testid="upload"]')).uploadFile(path.join(client, "samples", sample));
+    await (await page.$('[data-testid="upload"]')).uploadFile(path.join(client, "samples", "demo", sample));
     await page.waitForSelector("button[data-testid^='transcribe-']", { timeout: 15_000 });
     const before = await page.$$eval("button[data-testid^='call-']", (els) => els.length);
     await page.click("button[data-testid^='transcribe-']");

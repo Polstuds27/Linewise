@@ -2,7 +2,7 @@
  "generatedAt": "2026-10-11",
  "calls": [
   {
-   "id": "ai-mv3v6ou52",
+   "id": "ai-mv3y1a4z2",
    "agent": "Uploaded call",
    "duration": "0:30",
    "scorecard": "Bank Support v2",
@@ -18,7 +18,7 @@
     {
      "time": "00:00",
      "speaker": "Agent",
-     "text": "Thank you for calling, this is Jason.",
+     "text": "Thank you for calling, this is Ian.",
      "words": [
       {
        "start": 0.35,
@@ -37,12 +37,12 @@
       },
       {
        "start": 1.04,
-       "end": 1.78,
+       "end": 1.74,
        "text": "calling,"
       },
       {
-       "start": 1.78,
-       "end": 2.02,
+       "start": 1.74,
+       "end": 2,
        "text": "this"
       },
       {
@@ -51,9 +51,9 @@
        "text": "is"
       },
       {
-       "start": 2.19,
-       "end": 3.18,
-       "text": "Jason."
+       "start": 2.16,
+       "end": 3.04,
+       "text": "Ian."
       }
      ]
     },
@@ -63,53 +63,53 @@
      "text": "Hi, I want to dispute a charge on my card.",
      "words": [
       {
-       "start": 3.6,
-       "end": 3.92,
+       "start": 3.32,
+       "end": 3.66,
        "text": "Hi,"
       },
       {
-       "start": 4.02,
-       "end": 4.14,
+       "start": 3.76,
+       "end": 3.88,
        "text": "I"
       },
       {
-       "start": 4.14,
-       "end": 4.4,
+       "start": 3.88,
+       "end": 4.14,
        "text": "want"
       },
       {
-       "start": 4.42,
-       "end": 4.56,
+       "start": 4.16,
+       "end": 4.3,
        "text": "to"
       },
       {
-       "start": 4.56,
-       "end": 4.9,
+       "start": 4.3,
+       "end": 4.66,
        "text": "dispute"
       },
       {
-       "start": 4.96,
-       "end": 5.08,
+       "start": 4.7,
+       "end": 4.82,
        "text": "a"
       },
       {
-       "start": 5.08,
-       "end": 5.34,
+       "start": 4.82,
+       "end": 5.06,
        "text": "charge"
       },
       {
-       "start": 5.42,
-       "end": 5.56,
+       "start": 5.16,
+       "end": 5.3,
        "text": "on"
       },
       {
-       "start": 5.6,
-       "end": 5.74,
+       "start": 5.34,
+       "end": 5.48,
        "text": "my"
       },
       {
-       "start": 5.84,
-       "end": 6.66,
+       "start": 5.58,
+       "end": 6.4,
        "text": "card."
       }
      ]
@@ -120,60 +120,60 @@
      "text": "Sure, what's the card number?",
      "words": [
       {
-       "start": 6.82,
-       "end": 7.4,
+       "start": 6.58,
+       "end": 7.14,
        "text": "Sure,"
       },
       {
-       "start": 7.4,
-       "end": 7.76,
+       "start": 7.14,
+       "end": 7.5,
        "text": "what's"
       },
       {
-       "start": 7.76,
-       "end": 7.86,
+       "start": 7.5,
+       "end": 7.6,
        "text": "the"
       },
       {
-       "start": 7.88,
-       "end": 8.16,
+       "start": 7.64,
+       "end": 7.92,
        "text": "card"
       },
       {
-       "start": 8.16,
-       "end": 8.94,
+       "start": 7.92,
+       "end": 8.58,
        "text": "number?"
       }
      ]
     },
     {
-     "time": "00:09",
+     "time": "00:08",
      "speaker": "Customer",
      "text": "It's 4111, 1111, 1111, 1111.",
      "words": [
       {
-       "start": 9.18,
-       "end": 9.42,
+       "start": 8.92,
+       "end": 9.16,
        "text": "It's"
       },
       {
-       "start": 9.48,
-       "end": 10.52,
+       "start": 9.22,
+       "end": 10.28,
        "text": "4111,"
       },
       {
-       "start": 10.86,
-       "end": 11.8,
+       "start": 10.6,
+       "end": 11.54,
        "text": "1111,"
       },
       {
-       "start": 12.1,
-       "end": 13.12,
+       "start": 11.88,
+       "end": 12.84,
        "text": "1111,"
       },
       {
-       "start": 13.38,
-       "end": 14.4,
+       "start": 13.12,
+       "end": 14.14,
        "text": "1111."
       }
      ]
@@ -181,76 +181,83 @@
     {
      "time": "00:14",
      "speaker": "Agent",
-     "text": "Okay, so that's 4111, 1111, 1111, 1111, right? I understand how frustrating that is.",
+     "text": "Okay, so that's 4111, 1111, 1111, 1111, right?",
      "words": [
       {
-       "start": 14.9,
-       "end": 15.62,
+       "start": 14.66,
+       "end": 15.36,
        "text": "Okay,"
       },
       {
-       "start": 15.74,
-       "end": 15.88,
+       "start": 15.48,
+       "end": 15.62,
        "text": "so"
       },
       {
-       "start": 15.88,
-       "end": 16.2,
+       "start": 15.62,
+       "end": 15.94,
        "text": "that's"
       },
       {
-       "start": 16.28,
-       "end": 17.46,
+       "start": 16.04,
+       "end": 17.18,
        "text": "4111,"
       },
       {
-       "start": 17.64,
-       "end": 18.74,
+       "start": 17.42,
+       "end": 18.46,
        "text": "1111,"
       },
       {
-       "start": 18.94,
-       "end": 20.04,
+       "start": 18.7,
+       "end": 19.78,
        "text": "1111,"
       },
       {
-       "start": 20.24,
-       "end": 21.4,
+       "start": 19.98,
+       "end": 21.16,
        "text": "1111,"
       },
       {
-       "start": 21.4,
-       "end": 22.26,
+       "start": 21.16,
+       "end": 21.8,
        "text": "right?"
-      },
+      }
+     ]
+    },
+    {
+     "time": "00:22",
+     "speaker": "Agent",
+     "text": "I understand how frustrating that is.",
+     "words": [
       {
-       "start": 22.52,
-       "end": 22.64,
+       "start": 22.26,
+       "end": 22.38,
        "text": "I"
       },
       {
-       "start": 22.64,
-       "end": 23.16,
+       "start": 22.38,
+       "end": 22.9,
        "text": "understand"
       },
       {
-       "start": 23.29,
-       "end": 23.5,
+       "start": 23.05,
+       "end": 23.26,
        "text": "how"
       },
       {
-       "start": 23.52,
-       "end": 24.12,
+       "start": 23.28,
+       "end": 23.88,
        "text": "frustrating"
       },
       {
-       "start": 24.16,
-       "end": 24.44,
+       "start": 23.9,
+       "end": 24.18,
        "text": "that"
       },
       {
-       "start": 24.58,
-       "end": 24.98,
+       "start": 24.32,
+       "end": 24.7,
        "text": "is."
       }
      ]
@@ -261,73 +268,73 @@
      "text": "Is there anything else I can help with? Thanks for calling Bank Co. Bye.",
      "words": [
       {
-       "start": 25.4,
-       "end": 25.54,
+       "start": 25.14,
+       "end": 25.28,
        "text": "Is"
       },
       {
-       "start": 25.54,
-       "end": 25.72,
+       "start": 25.28,
+       "end": 25.46,
        "text": "there"
       },
       {
-       "start": 25.72,
-       "end": 26.06,
+       "start": 25.46,
+       "end": 25.8,
        "text": "anything"
       },
       {
-       "start": 26.1,
-       "end": 26.38,
+       "start": 25.82,
+       "end": 26.1,
        "text": "else"
       },
       {
-       "start": 26.48,
-       "end": 26.6,
+       "start": 26.22,
+       "end": 26.34,
        "text": "I"
       },
       {
-       "start": 26.61,
-       "end": 26.82,
+       "start": 26.35,
+       "end": 26.56,
        "text": "can"
       },
       {
-       "start": 26.82,
-       "end": 27.1,
+       "start": 26.56,
+       "end": 26.84,
        "text": "help"
       },
       {
-       "start": 27.1,
-       "end": 27.7,
+       "start": 26.84,
+       "end": 27.3,
        "text": "with?"
       },
       {
-       "start": 27.92,
-       "end": 28.34,
+       "start": 27.66,
+       "end": 28.08,
        "text": "Thanks"
       },
       {
-       "start": 28.34,
-       "end": 28.54,
+       "start": 28.08,
+       "end": 28.28,
        "text": "for"
       },
       {
-       "start": 28.54,
-       "end": 28.9,
+       "start": 28.28,
+       "end": 28.64,
        "text": "calling"
       },
       {
-       "start": 28.92,
-       "end": 29.2,
+       "start": 28.66,
+       "end": 28.94,
        "text": "Bank"
       },
       {
-       "start": 29.38,
-       "end": 29.76,
+       "start": 29.12,
+       "end": 29.5,
        "text": "Co."
       },
       {
-       "start": 29.87,
-       "end": 30.2,
+       "start": 29.61,
+       "end": 29.92,
        "text": "Bye."
       }
      ]
@@ -340,7 +347,7 @@
      "severity": "normal",
      "speaker": "agent",
      "timestamp": "00:00",
-     "evidence": "Thank you for calling, this is Jason.",
+     "evidence": "Thank you for calling, this is Ian.",
      "reason": "The agent's greeting gives their own name."
     },
     {
@@ -357,8 +364,8 @@
      "verdict": "pass",
      "severity": "normal",
      "speaker": "agent",
-     "timestamp": "00:14",
-     "evidence": "Okay, so that's 4111, 1111, 1111, 1111, right? I understand how frustrating that is.",
+     "timestamp": "00:22",
+     "evidence": "I understand how frustrating that is.",
      "reason": "The agent acknowledged how the customer felt."
     },
     {
@@ -367,7 +374,7 @@
      "severity": "critical",
      "speaker": "agent",
      "timestamp": "00:14",
-     "evidence": "Okay, so that's 4111, 1111, 1111, 1111, right? I understand how frustrating that is.",
+     "evidence": "Okay, so that's 4111, 1111, 1111, 1111, right?",
      "reason": "Deterministic PII engine: agent spoke a full card number."
     },
     {
@@ -397,10 +404,10 @@
      "reason": "The agent's last line thanks the customer and names the company."
     }
    ],
-   "coaching": "You demonstrated excellent initial interactions and empathy. However, you missed a crucial step in verifying the customer's identity, which could lead to potential issues. Please ensure you verify identity before discussing account details in future calls."
+   "coaching": "You demonstrated excellent initial interactions and professionalism. However, you missed a crucial step by not verifying the customer's identity, which could lead to security issues. Please ensure to verify the identity before discussing any account details to prevent any mishaps."
   },
   {
-   "id": "ai-mv3v6u9g4",
+   "id": "ai-mv3y1fls4",
    "agent": "Uploaded call",
    "duration": "0:17",
    "scorecard": "Bank Support v2",
@@ -416,7 +423,7 @@
     {
      "time": "00:00",
      "speaker": "Agent",
-     "text": "Thank you for calling BankCo. This is Maria. May I have your account ID and date of birth to verify you?",
+     "text": "Thank you for calling Bank Co. This is Paul. May I have your account ID and date or birth to verify you?",
      "words": [
       {
        "start": 0.27,
@@ -424,103 +431,108 @@
        "text": "Thank"
       },
       {
-       "start": 0.62,
-       "end": 0.8,
+       "start": 0.63,
+       "end": 0.84,
        "text": "you"
       },
       {
-       "start": 0.8,
-       "end": 0.96,
+       "start": 0.84,
+       "end": 1.04,
        "text": "for"
       },
       {
-       "start": 0.96,
-       "end": 1.34,
+       "start": 1.04,
+       "end": 1.38,
        "text": "calling"
       },
       {
-       "start": 1.38,
-       "end": 2.24,
-       "text": "BankCo."
+       "start": 1.46,
+       "end": 1.74,
+       "text": "Bank"
       },
       {
-       "start": 2.24,
-       "end": 2.5,
+       "start": 1.82,
+       "end": 2.1,
+       "text": "Co."
+      },
+      {
+       "start": 2.1,
+       "end": 2.34,
        "text": "This"
       },
       {
-       "start": 2.5,
-       "end": 2.64,
+       "start": 2.34,
+       "end": 2.48,
        "text": "is"
       },
       {
-       "start": 2.64,
-       "end": 3.32,
-       "text": "Maria."
+       "start": 2.5,
+       "end": 3.08,
+       "text": "Paul."
       },
       {
-       "start": 3.32,
-       "end": 3.46,
+       "start": 3.19,
+       "end": 3.4,
        "text": "May"
       },
       {
-       "start": 3.52,
-       "end": 3.64,
+       "start": 3.44,
+       "end": 3.56,
        "text": "I"
       },
       {
-       "start": 3.64,
-       "end": 3.84,
+       "start": 3.56,
+       "end": 3.78,
        "text": "have"
       },
       {
-       "start": 3.84,
-       "end": 4.02,
+       "start": 3.78,
+       "end": 3.94,
        "text": "your"
       },
       {
-       "start": 4.02,
-       "end": 4.36,
+       "start": 3.94,
+       "end": 4.26,
        "text": "account"
       },
       {
-       "start": 4.54,
-       "end": 4.68,
+       "start": 4.48,
+       "end": 4.62,
        "text": "ID"
       },
       {
-       "start": 4.68,
-       "end": 4.88,
+       "start": 4.75,
+       "end": 4.96,
        "text": "and"
       },
       {
-       "start": 4.88,
-       "end": 5.1,
+       "start": 4.96,
+       "end": 5.16,
        "text": "date"
       },
       {
-       "start": 5.1,
-       "end": 5.24,
-       "text": "of"
+       "start": 5.26,
+       "end": 5.4,
+       "text": "or"
       },
       {
-       "start": 5.24,
-       "end": 5.44,
+       "start": 5.4,
+       "end": 5.68,
        "text": "birth"
       },
       {
-       "start": 5.48,
-       "end": 5.62,
+       "start": 5.86,
+       "end": 6,
        "text": "to"
       },
       {
-       "start": 5.62,
-       "end": 5.98,
+       "start": 6,
+       "end": 6.38,
        "text": "verify"
       },
       {
-       "start": 6.15,
-       "end": 6.9,
+       "start": 6.53,
+       "end": 7.16,
        "text": "you?"
       }
      ]
@@ -528,36 +540,36 @@
     {
      "time": "00:07",
      "speaker": "Customer",
-     "text": "Sure. It's AC-48291, June 4, 1990.",
+     "text": "Sure. It's AC-48291, June 4th, 1990.",
      "words": [
       {
-       "start": 7.1,
-       "end": 7.78,
+       "start": 7.42,
+       "end": 8.02,
        "text": "Sure."
       },
       {
-       "start": 7.78,
-       "end": 7.96,
+       "start": 8.02,
+       "end": 8.2,
        "text": "It's"
       },
       {
-       "start": 8.2,
-       "end": 10.36,
+       "start": 8.46,
+       "end": 10.56,
        "text": "AC-48291,"
       },
       {
-       "start": 10.42,
-       "end": 10.7,
+       "start": 10.6,
+       "end": 10.88,
        "text": "June"
       },
       {
-       "start": 10.96,
-       "end": 11.42,
-       "text": "4,"
+       "start": 11.1,
+       "end": 11.66,
+       "text": "4th,"
       },
       {
-       "start": 11.88,
-       "end": 12.94,
+       "start": 11.96,
+       "end": 12.88,
        "text": "1990."
       }
      ]
@@ -565,7 +577,7 @@
     {
      "time": "00:13",
      "speaker": "Agent",
-     "text": "Is there anything else I can help with? Thanks for calling BankCo.",
+     "text": "Is there anything else I can help with? Thanks for calling Bank Co.",
      "words": [
       {
        "start": 13.18,
@@ -579,53 +591,58 @@
       },
       {
        "start": 13.48,
-       "end": 13.82,
+       "end": 13.78,
        "text": "anything"
       },
       {
-       "start": 13.84,
-       "end": 14.12,
+       "start": 13.82,
+       "end": 14.1,
        "text": "else"
       },
       {
-       "start": 14.2,
-       "end": 14.32,
+       "start": 14.12,
+       "end": 14.24,
        "text": "I"
       },
       {
-       "start": 14.32,
-       "end": 14.48,
+       "start": 14.24,
+       "end": 14.4,
        "text": "can"
       },
       {
-       "start": 14.48,
-       "end": 14.74,
+       "start": 14.4,
+       "end": 14.6,
        "text": "help"
       },
       {
-       "start": 14.78,
-       "end": 15.24,
+       "start": 14.6,
+       "end": 14.98,
        "text": "with?"
       },
       {
-       "start": 15.24,
-       "end": 15.64,
+       "start": 14.98,
+       "end": 15.4,
        "text": "Thanks"
       },
       {
-       "start": 15.64,
-       "end": 15.82,
+       "start": 15.4,
+       "end": 15.58,
        "text": "for"
       },
       {
-       "start": 15.82,
-       "end": 16.18,
+       "start": 15.58,
+       "end": 15.94,
        "text": "calling"
       },
       {
-       "start": 16.24,
-       "end": 16.86,
-       "text": "BankCo."
+       "start": 15.98,
+       "end": 16.26,
+       "text": "Bank"
+      },
+      {
+       "start": 16.38,
+       "end": 16.52,
+       "text": "Co."
       }
      ]
     }
@@ -637,7 +654,7 @@
      "severity": "normal",
      "speaker": "agent",
      "timestamp": "00:00",
-     "evidence": "Thank you for calling BankCo. This is Maria. May I have your account ID and date of birth to verify you?",
+     "evidence": "Thank you for calling Bank Co. This is Paul. May I have your account ID and date or birth to verify you?",
      "reason": "The agent's greeting gives their own name."
     },
     {
@@ -646,7 +663,7 @@
      "severity": "critical",
      "speaker": "agent",
      "timestamp": "00:00",
-     "evidence": "Thank you for calling BankCo. This is Maria. May I have your account ID and date of birth to verify you?",
+     "evidence": "Thank you for calling Bank Co. This is Paul. May I have your account ID and date or birth to verify you?",
      "reason": "The agent asked an identity question before going into card or account details."
     },
     {
@@ -679,7 +696,7 @@
      "severity": "normal",
      "speaker": "agent",
      "timestamp": "00:13",
-     "evidence": "Is there anything else I can help with? Thanks for calling BankCo.",
+     "evidence": "Is there anything else I can help with? Thanks for calling Bank Co.",
      "reason": "The agent offered further help."
     },
     {
@@ -688,14 +705,14 @@
      "severity": "normal",
      "speaker": "agent",
      "timestamp": "00:13",
-     "evidence": "Is there anything else I can help with? Thanks for calling BankCo.",
+     "evidence": "Is there anything else I can help with? Thanks for calling Bank Co.",
      "reason": "The agent's last line thanks the customer and names the company."
     }
    ],
-   "coaching": "You handled the call professionally and efficiently, ensuring the customer felt valued and informed. Your closing was perfect, reinforcing the positive experience with a clear, friendly, and professional note."
+   "coaching": "You handled the call professionally and efficiently, ensuring a positive customer experience. Moving forward, consider pausing to summarize the key points discussed at the end of the call to reinforce the conversation and prevent any potential misunderstandings."
   },
   {
-   "id": "ai-mv3v6z5v6",
+   "id": "ai-mv3y1kj76",
    "agent": "Uploaded call",
    "duration": "0:07",
    "scorecard": "Bank Support v2",
@@ -719,13 +736,13 @@
        "text": "Hello,"
       },
       {
-       "start": 0.99,
-       "end": 1.2,
+       "start": 0.97,
+       "end": 1.18,
        "text": "how"
       },
       {
-       "start": 1.25,
-       "end": 1.46,
+       "start": 1.27,
+       "end": 1.48,
        "text": "can"
       },
       {
@@ -734,8 +751,8 @@
        "text": "I"
       },
       {
-       "start": 1.7,
-       "end": 2.28,
+       "start": 1.74,
+       "end": 2.36,
        "text": "help?"
       }
      ]
@@ -746,55 +763,55 @@
      "text": "This is so frustrating. Nobody helps me.",
      "words": [
       {
-       "start": 2.52,
-       "end": 2.8,
+       "start": 2.58,
+       "end": 2.86,
        "text": "This"
       },
       {
-       "start": 2.8,
-       "end": 2.94,
+       "start": 2.86,
+       "end": 3,
        "text": "is"
       },
       {
-       "start": 3.02,
-       "end": 3.16,
+       "start": 3.08,
+       "end": 3.22,
        "text": "so"
       },
       {
-       "start": 3.16,
-       "end": 4.22,
+       "start": 3.22,
+       "end": 4.26,
        "text": "frustrating."
       },
       {
-       "start": 4.22,
-       "end": 4.56,
+       "start": 4.26,
+       "end": 4.62,
        "text": "Nobody"
       },
       {
-       "start": 4.61,
-       "end": 4.96,
+       "start": 4.67,
+       "end": 5.02,
        "text": "helps"
       },
       {
-       "start": 5.16,
-       "end": 5.92,
+       "start": 5.2,
+       "end": 6,
        "text": "me."
       }
      ]
     },
     {
-     "time": "00:05",
+     "time": "00:06",
      "speaker": "Agent",
      "text": "Okay, noted.",
      "words": [
       {
-       "start": 5.96,
-       "end": 6.68,
+       "start": 6.04,
+       "end": 6.74,
        "text": "Okay,"
       },
       {
-       "start": 6.68,
-       "end": 6.92,
+       "start": 6.74,
+       "end": 6.96,
        "text": "noted."
       }
      ]
@@ -848,7 +865,7 @@
      "verdict": "fail",
      "severity": "normal",
      "speaker": "agent",
-     "timestamp": "00:05",
+     "timestamp": "00:06",
      "evidence": "Okay, noted.",
      "reason": "The agent never offered further help."
     },
@@ -857,71 +874,66 @@
      "verdict": "fail",
      "severity": "normal",
      "speaker": "agent",
-     "timestamp": "00:05",
+     "timestamp": "00:06",
      "evidence": "Okay, noted.",
      "reason": "The agent's last line is missing a thank-you and the company name."
     }
    ],
-   "coaching": "You demonstrated strong adherence to protocol by not reading back card numbers or promising refunds without approval. However, you missed opportunities to greet customers with your name and company, show empathy, offer further help, and properly close the call. Focus on greeting customers with your name and company at the start of the call and showing empathy when needed."
+   "coaching": "You demonstrated strong adherence to protocol by not reading back card numbers or promising refunds. However, you missed opportunities to show empathy and offer further assistance, which could have improved the customer's experience. Try greeting with your name and company at the start and offering additional help before closing the call."
   },
   {
-   "id": "ai-mv3v79ze2",
+   "id": "ai-mv3y1rfo8",
    "agent": "Uploaded call",
-   "duration": "1:07",
+   "duration": "0:55",
    "scorecard": "Bank Support v2",
-   "name": "call-sample.wav",
+   "name": "call-150.m4a",
    "number": 4,
-   "speakers": "unknown",
+   "speakers": "channels",
    "languages": [
     "en"
    ],
    "engine": "Whisper large-v3-turbo",
-   "redactions": [
-    {
-     "text": "Jason",
-     "kind": "name"
-    }
-   ],
+   "redactions": [],
    "lines": [
     {
      "time": "00:00",
-     "speaker": "Unknown",
-     "text": "Thank you for calling bank co this is Jason how may i help you today?",
+     "speaker": "Agent",
+     "text": "Thank you for calling Bank Co. This is Limuel. How may I help you today?",
      "words": [
       {
-       "start": 0,
-       "end": 0.34,
+       "start": 0.31,
+       "end": 0.66,
        "text": "Thank"
       },
       {
-       "start": 0.34,
-       "end": 0.52,
+       "start": 0.66,
+       "end": 0.82,
        "text": "you"
       },
       {
-       "start": 0.53,
-       "end": 0.74,
+       "start": 0.83,
+       "end": 1.04,
        "text": "for"
       },
       {
-       "start": 0.74,
-       "end": 1.16,
+       "start": 1.04,
+       "end": 1.38,
        "text": "calling"
       },
       {
-       "start": 1.22,
-       "end": 1.5,
-       "text": "bank"
+       "start": 1.4,
+       "end": 1.68,
+       "text": "Bank"
       },
       {
-       "start": 1.62,
-       "end": 1.76,
-       "text": "co"
+       "start": 1.86,
+       "end": 2.22,
+       "text": "Co."
       },
       {
-       "start": 2.22,
-       "end": 2.5,
-       "text": "this"
+       "start": 2.28,
+       "end": 2.56,
+       "text": "This"
       },
       {
        "start": 2.6,
@@ -930,685 +942,644 @@
       },
       {
        "start": 2.74,
-       "end": 3.08,
-       "text": "Jason"
+       "end": 3.46,
+       "text": "Limuel."
       },
       {
-       "start": 4.19,
-       "end": 4.4,
-       "text": "how"
+       "start": 3.51,
+       "end": 3.72,
+       "text": "How"
       },
       {
-       "start": 4.45,
-       "end": 4.66,
+       "start": 3.72,
+       "end": 3.92,
        "text": "may"
       },
       {
-       "start": 4.74,
-       "end": 4.86,
-       "text": "i"
+       "start": 3.94,
+       "end": 4.06,
+       "text": "I"
       },
       {
-       "start": 4.88,
-       "end": 5.16,
+       "start": 4.06,
+       "end": 4.34,
        "text": "help"
       },
       {
-       "start": 5.16,
-       "end": 5.32,
+       "start": 4.34,
+       "end": 4.46,
        "text": "you"
       },
       {
-       "start": 5.32,
-       "end": 6.32,
+       "start": 4.46,
+       "end": 5.54,
        "text": "today?"
       }
      ]
     },
     {
-     "time": "00:06",
-     "speaker": "Unknown",
-     "text": "Hi I want to dispute a charge on my card.",
+     "time": "00:05",
+     "speaker": "Customer",
+     "text": "Hi, I want to dispute a charge on my card.",
      "words": [
       {
-       "start": 6.84,
-       "end": 6.98,
-       "text": "Hi"
+       "start": 5.72,
+       "end": 6.06,
+       "text": "Hi,"
       },
       {
-       "start": 7.46,
-       "end": 7.58,
+       "start": 6.18,
+       "end": 6.3,
        "text": "I"
       },
       {
-       "start": 7.58,
-       "end": 7.84,
+       "start": 6.3,
+       "end": 6.54,
        "text": "want"
       },
       {
-       "start": 7.86,
-       "end": 8,
+       "start": 6.56,
+       "end": 6.7,
        "text": "to"
       },
       {
-       "start": 8,
-       "end": 8.38,
+       "start": 6.7,
+       "end": 7.02,
        "text": "dispute"
       },
       {
-       "start": 8.46,
-       "end": 8.58,
+       "start": 7.1,
+       "end": 7.22,
        "text": "a"
       },
       {
-       "start": 8.58,
-       "end": 8.88,
+       "start": 7.22,
+       "end": 7.48,
        "text": "charge"
       },
       {
-       "start": 8.96,
-       "end": 9.1,
+       "start": 7.58,
+       "end": 7.72,
        "text": "on"
       },
       {
-       "start": 9.14,
-       "end": 9.28,
+       "start": 7.76,
+       "end": 7.9,
        "text": "my"
       },
       {
-       "start": 9.36,
-       "end": 10.26,
+       "start": 8,
+       "end": 8.8,
        "text": "card."
       }
      ]
     },
     {
-     "time": "00:10",
-     "speaker": "Unknown",
+     "time": "00:09",
+     "speaker": "Agent",
      "text": "Sure. What is the card number?",
      "words": [
       {
-       "start": 10.74,
-       "end": 11.7,
+       "start": 9.04,
+       "end": 9.6,
        "text": "Sure."
       },
       {
-       "start": 12.04,
-       "end": 12.32,
+       "start": 9.6,
+       "end": 9.86,
        "text": "What"
       },
       {
-       "start": 12.32,
-       "end": 12.46,
+       "start": 9.9,
+       "end": 10.04,
        "text": "is"
       },
       {
-       "start": 12.46,
-       "end": 12.6,
+       "start": 10.04,
+       "end": 10.16,
        "text": "the"
       },
       {
-       "start": 12.62,
-       "end": 12.9,
+       "start": 10.2,
+       "end": 10.48,
        "text": "card"
       },
       {
-       "start": 12.9,
-       "end": 13.92,
+       "start": 10.48,
+       "end": 11.36,
        "text": "number?"
       }
      ]
     },
     {
-     "time": "00:14",
-     "speaker": "Unknown",
-     "text": "It is 4111 111 1111 11111.",
+     "time": "00:11",
+     "speaker": "Customer",
+     "text": "It is 4111-1111-111111.",
      "words": [
       {
-       "start": 14.32,
-       "end": 14.46,
+       "start": 11.48,
+       "end": 11.62,
        "text": "It"
       },
       {
-       "start": 14.48,
-       "end": 14.62,
+       "start": 11.64,
+       "end": 11.78,
        "text": "is"
       },
       {
-       "start": 14.74,
-       "end": 15.7,
-       "text": "4111"
-      },
-      {
-       "start": 16.36,
-       "end": 16.84,
-       "text": "111"
-      },
-      {
-       "start": 17.82,
-       "end": 18.48,
-       "text": "1111"
-      },
-      {
-       "start": 19.3,
-       "end": 20.26,
-       "text": "11111."
+       "start": 11.86,
+       "end": 16.92,
+       "text": "4111-1111-111111."
       }
      ]
     },
     {
-     "time": "00:21",
-     "speaker": "Unknown",
-     "text": "Okay, so that is 4111 1111 1111 11111 right?",
+     "time": "00:17",
+     "speaker": "Agent",
+     "text": "Okay, so that is 4111-1111-111111, right?",
      "words": [
       {
-       "start": 21.3,
-       "end": 22,
+       "start": 17.42,
+       "end": 18.12,
        "text": "Okay,"
       },
       {
-       "start": 22.26,
-       "end": 22.4,
+       "start": 18.24,
+       "end": 18.38,
        "text": "so"
       },
       {
-       "start": 22.4,
-       "end": 22.62,
+       "start": 18.38,
+       "end": 18.58,
        "text": "that"
       },
       {
-       "start": 22.66,
-       "end": 22.8,
+       "start": 18.62,
+       "end": 18.76,
        "text": "is"
       },
       {
-       "start": 22.94,
-       "end": 23.86,
-       "text": "4111"
+       "start": 18.86,
+       "end": 23.98,
+       "text": "4111-1111-111111,"
       },
       {
-       "start": 24.5,
-       "end": 25.1,
-       "text": "1111"
-      },
-      {
-       "start": 26.04,
-       "end": 26.68,
-       "text": "1111"
-      },
-      {
-       "start": 27.48,
-       "end": 28.6,
-       "text": "11111"
-      },
-      {
-       "start": 28.81,
-       "end": 29.86,
+       "start": 23.98,
+       "end": 24.92,
        "text": "right?"
       }
      ]
     },
     {
-     "time": "00:30",
-     "speaker": "Unknown",
+     "time": "00:25",
+     "speaker": "Customer",
      "text": "Yes, that is correct.",
      "words": [
       {
-       "start": 30.41,
-       "end": 30.98,
+       "start": 25.27,
+       "end": 25.66,
        "text": "Yes,"
       },
       {
-       "start": 31.1,
-       "end": 31.38,
+       "start": 25.66,
+       "end": 25.92,
        "text": "that"
       },
       {
-       "start": 31.4,
-       "end": 31.54,
+       "start": 25.92,
+       "end": 26.06,
        "text": "is"
       },
       {
-       "start": 31.54,
-       "end": 32.62,
+       "start": 26.06,
+       "end": 26.46,
        "text": "correct."
       }
      ]
     },
     {
-     "time": "00:33",
-     "speaker": "Unknown",
-     "text": "I understand how frustrating that is.",
+     "time": "00:27",
+     "speaker": "Agent",
+     "text": "I understand how frustrating that is. Let me check the charge for you. I see a charge of $45 on the 3rd of March. Do you recognize that transaction?",
      "words": [
       {
-       "start": 33.08,
-       "end": 33.2,
+       "start": 27.18,
+       "end": 27.3,
        "text": "I"
       },
       {
-       "start": 33.2,
-       "end": 33.7,
+       "start": 27.3,
+       "end": 27.8,
        "text": "understand"
       },
       {
-       "start": 33.85,
-       "end": 34.06,
+       "start": 27.97,
+       "end": 28.18,
        "text": "how"
       },
       {
-       "start": 34.14,
-       "end": 34.74,
+       "start": 28.18,
+       "end": 28.78,
        "text": "frustrating"
       },
       {
-       "start": 34.78,
-       "end": 35.06,
+       "start": 28.82,
+       "end": 29.1,
        "text": "that"
       },
       {
-       "start": 35.26,
-       "end": 36,
+       "start": 29.26,
+       "end": 29.78,
        "text": "is."
-      }
-     ]
-    },
-    {
-     "time": "00:36",
-     "speaker": "Unknown",
-     "text": "Let me check the charge for you.",
-     "words": [
+      },
       {
-       "start": 36.43,
-       "end": 36.64,
+       "start": 29.78,
+       "end": 29.92,
        "text": "Let"
       },
       {
-       "start": 36.68,
-       "end": 36.82,
+       "start": 29.96,
+       "end": 30.1,
        "text": "me"
       },
       {
-       "start": 36.82,
-       "end": 37.08,
+       "start": 30.1,
+       "end": 30.4,
        "text": "check"
       },
       {
-       "start": 37.08,
-       "end": 37.28,
+       "start": 30.4,
+       "end": 30.58,
        "text": "the"
       },
       {
-       "start": 37.28,
-       "end": 37.6,
+       "start": 30.58,
+       "end": 30.9,
        "text": "charge"
       },
       {
-       "start": 37.61,
-       "end": 37.82,
+       "start": 30.93,
+       "end": 31.14,
        "text": "for"
       },
       {
-       "start": 37.85,
-       "end": 38.62,
+       "start": 31.21,
+       "end": 31.78,
        "text": "you."
-      }
-     ]
-    },
-    {
-     "time": "00:39",
-     "speaker": "Unknown",
-     "text": "I see a charge of $45 on March 3rd.",
-     "words": [
+      },
       {
-       "start": 39.08,
-       "end": 39.2,
+       "start": 32.12,
+       "end": 32.24,
        "text": "I"
       },
       {
-       "start": 39.21,
-       "end": 39.42,
+       "start": 32.25,
+       "end": 32.46,
        "text": "see"
       },
       {
-       "start": 39.44,
-       "end": 39.56,
+       "start": 32.48,
+       "end": 32.6,
        "text": "a"
       },
       {
-       "start": 39.56,
-       "end": 39.88,
+       "start": 32.6,
+       "end": 32.94,
        "text": "charge"
       },
       {
-       "start": 39.94,
-       "end": 40.08,
+       "start": 32.96,
+       "end": 33.1,
        "text": "of"
       },
       {
-       "start": 40.22,
-       "end": 40.82,
+       "start": 33.22,
+       "end": 33.74,
        "text": "$45"
       },
       {
-       "start": 41.38,
-       "end": 41.52,
+       "start": 34.18,
+       "end": 34.32,
        "text": "on"
       },
       {
-       "start": 41.52,
-       "end": 41.82,
-       "text": "March"
+       "start": 34.32,
+       "end": 34.44,
+       "text": "the"
       },
       {
-       "start": 41.96,
-       "end": 42.78,
-       "text": "3rd."
-      }
-     ]
-    },
-    {
-     "time": "00:43",
-     "speaker": "Unknown",
-     "text": "Do you recognize that transaction?",
-     "words": [
+       "start": 34.48,
+       "end": 34.72,
+       "text": "3rd"
+      },
       {
-       "start": 43.22,
-       "end": 43.36,
+       "start": 34.74,
+       "end": 34.88,
+       "text": "of"
+      },
+      {
+       "start": 34.93,
+       "end": 35.6,
+       "text": "March."
+      },
+      {
+       "start": 35.68,
+       "end": 35.82,
        "text": "Do"
       },
       {
-       "start": 43.36,
-       "end": 43.54,
+       "start": 35.82,
+       "end": 36,
        "text": "you"
       },
       {
-       "start": 43.54,
-       "end": 43.98,
+       "start": 36,
+       "end": 36.44,
        "text": "recognize"
       },
       {
-       "start": 44.1,
-       "end": 44.38,
+       "start": 36.52,
+       "end": 36.8,
        "text": "that"
       },
       {
-       "start": 44.46,
-       "end": 45.5,
+       "start": 36.88,
+       "end": 38.02,
        "text": "transaction?"
       }
      ]
     },
     {
-     "time": "00:46",
-     "speaker": "Unknown",
+     "time": "00:38",
+     "speaker": "Customer",
      "text": "No, I never made that purchase.",
      "words": [
       {
-       "start": 46.38,
-       "end": 46.82,
+       "start": 38.42,
+       "end": 38.76,
        "text": "No,"
       },
       {
-       "start": 47.04,
-       "end": 47.16,
+       "start": 38.86,
+       "end": 38.98,
        "text": "I"
       },
       {
-       "start": 47.16,
-       "end": 47.46,
+       "start": 38.98,
+       "end": 39.24,
        "text": "never"
       },
       {
-       "start": 47.46,
-       "end": 47.74,
+       "start": 39.24,
+       "end": 39.5,
        "text": "made"
       },
       {
-       "start": 47.74,
-       "end": 47.94,
+       "start": 39.5,
+       "end": 39.68,
        "text": "that"
       },
       {
-       "start": 47.94,
-       "end": 49.02,
+       "start": 39.68,
+       "end": 40.52,
        "text": "purchase."
       }
      ]
     },
     {
-     "time": "00:49",
-     "speaker": "Unknown",
-     "text": "I will file a dispute for you right now. You will receive a confirmation message within 2 business days.",
+     "time": "00:40",
+     "speaker": "Agent",
+     "text": "I will file a dispute for you right now. You will receive a confirmation message within two business days.",
      "words": [
       {
-       "start": 49.54,
-       "end": 49.66,
+       "start": 40.88,
+       "end": 41,
        "text": "I"
       },
       {
-       "start": 49.66,
-       "end": 49.84,
+       "start": 41,
+       "end": 41.16,
        "text": "will"
       },
       {
-       "start": 49.86,
-       "end": 50.14,
+       "start": 41.18,
+       "end": 41.46,
        "text": "file"
       },
       {
-       "start": 50.2,
-       "end": 50.32,
+       "start": 41.5,
+       "end": 41.62,
        "text": "a"
       },
       {
-       "start": 50.32,
-       "end": 50.68,
+       "start": 41.62,
+       "end": 41.98,
        "text": "dispute"
       },
       {
-       "start": 50.73,
-       "end": 50.94,
+       "start": 42.05,
+       "end": 42.26,
        "text": "for"
       },
       {
-       "start": 50.94,
-       "end": 51.12,
+       "start": 42.26,
+       "end": 42.42,
        "text": "you"
       },
       {
-       "start": 51.12,
-       "end": 51.36,
+       "start": 42.42,
+       "end": 42.66,
        "text": "right"
       },
       {
-       "start": 51.45,
-       "end": 52.2,
+       "start": 42.85,
+       "end": 43.28,
        "text": "now."
       },
       {
-       "start": 52.59,
-       "end": 52.8,
+       "start": 43.28,
+       "end": 43.48,
        "text": "You"
       },
       {
-       "start": 52.8,
-       "end": 52.98,
+       "start": 43.48,
+       "end": 43.64,
        "text": "will"
       },
       {
-       "start": 52.98,
-       "end": 53.34,
+       "start": 43.64,
+       "end": 43.98,
        "text": "receive"
       },
       {
-       "start": 53.38,
-       "end": 53.5,
+       "start": 44.02,
+       "end": 44.14,
        "text": "a"
       },
       {
-       "start": 53.5,
-       "end": 54,
+       "start": 44.14,
+       "end": 44.62,
        "text": "confirmation"
       },
       {
-       "start": 54.17,
-       "end": 54.66,
+       "start": 44.73,
+       "end": 45.22,
        "text": "message"
       },
       {
-       "start": 54.66,
-       "end": 54.98,
+       "start": 45.22,
+       "end": 45.5,
        "text": "within"
       },
       {
-       "start": 55.12,
-       "end": 55.24,
-       "text": "2"
+       "start": 45.59,
+       "end": 45.8,
+       "text": "two"
       },
       {
-       "start": 55.24,
-       "end": 55.62,
+       "start": 45.8,
+       "end": 46.16,
        "text": "business"
       },
       {
-       "start": 55.78,
-       "end": 56.76,
+       "start": 46.24,
+       "end": 46.96,
        "text": "days."
       }
      ]
     },
     {
-     "time": "00:57",
-     "speaker": "Unknown",
+     "time": "00:47",
+     "speaker": "Agent",
      "text": "Is there anything else I can help with today?",
      "words": [
       {
-       "start": 57.24,
-       "end": 57.38,
+       "start": 47.4,
+       "end": 47.54,
        "text": "Is"
       },
       {
-       "start": 57.38,
-       "end": 57.56,
+       "start": 47.54,
+       "end": 47.72,
        "text": "there"
       },
       {
-       "start": 57.56,
-       "end": 57.92,
+       "start": 47.72,
+       "end": 48.06,
        "text": "anything"
       },
       {
-       "start": 58.02,
-       "end": 58.3,
+       "start": 48.08,
+       "end": 48.36,
        "text": "else"
       },
       {
-       "start": 58.38,
-       "end": 58.5,
+       "start": 48.46,
+       "end": 48.58,
        "text": "I"
       },
       {
-       "start": 58.5,
-       "end": 58.68,
+       "start": 48.59,
+       "end": 48.8,
        "text": "can"
       },
       {
-       "start": 58.68,
-       "end": 58.96,
+       "start": 48.8,
+       "end": 49.08,
        "text": "help"
       },
       {
-       "start": 58.96,
-       "end": 59.16,
+       "start": 49.08,
+       "end": 49.26,
        "text": "with"
       },
       {
-       "start": 59.16,
-       "end": 60.08,
+       "start": 49.26,
+       "end": 50.14,
        "text": "today?"
       }
      ]
     },
     {
-     "time": "01:00",
-     "speaker": "Unknown",
-     "text": "No, that is all. Thank you for calling bank co.",
+     "time": "00:50",
+     "speaker": "Customer",
+     "text": "No, that is all.",
      "words": [
       {
-       "start": 60.66,
-       "end": 61.14,
+       "start": 50.48,
+       "end": 50.9,
        "text": "No,"
       },
       {
-       "start": 61.26,
-       "end": 61.54,
+       "start": 50.9,
+       "end": 51.14,
        "text": "that"
       },
       {
-       "start": 61.56,
-       "end": 61.7,
+       "start": 51.14,
+       "end": 51.28,
        "text": "is"
       },
       {
-       "start": 61.83,
-       "end": 62.68,
+       "start": 51.39,
+       "end": 52.08,
        "text": "all."
-      },
-      {
-       "start": 62.95,
-       "end": 63.3,
-       "text": "Thank"
-      },
-      {
-       "start": 63.3,
-       "end": 63.5,
-       "text": "you"
-      },
-      {
-       "start": 63.51,
-       "end": 63.72,
-       "text": "for"
-      },
-      {
-       "start": 63.72,
-       "end": 64.12,
-       "text": "calling"
-      },
-      {
-       "start": 64.2,
-       "end": 64.48,
-       "text": "bank"
-      },
-      {
-       "start": 64.58,
-       "end": 65.26,
-       "text": "co."
       }
      ]
     },
     {
-     "time": "01:05",
-     "speaker": "Unknown",
-     "text": "Have a great day.",
+     "time": "00:52",
+     "speaker": "Agent",
+     "text": "Thank you for calling Bank Co. Have a great day.",
      "words": [
       {
-       "start": 65.72,
-       "end": 66,
+       "start": 52.19,
+       "end": 52.54,
+       "text": "Thank"
+      },
+      {
+       "start": 52.54,
+       "end": 52.68,
+       "text": "you"
+      },
+      {
+       "start": 52.68,
+       "end": 52.88,
+       "text": "for"
+      },
+      {
+       "start": 52.88,
+       "end": 53.24,
+       "text": "calling"
+      },
+      {
+       "start": 53.26,
+       "end": 53.54,
+       "text": "Bank"
+      },
+      {
+       "start": 53.74,
+       "end": 53.94,
+       "text": "Co."
+      },
+      {
+       "start": 53.94,
+       "end": 54.22,
        "text": "Have"
       },
       {
-       "start": 66,
-       "end": 66.08,
+       "start": 54.22,
+       "end": 54.34,
        "text": "a"
       },
       {
-       "start": 66.08,
-       "end": 66.34,
+       "start": 54.34,
+       "end": 54.6,
        "text": "great"
       },
       {
-       "start": 66.39,
-       "end": 66.8,
+       "start": 54.73,
+       "end": 55,
        "text": "day."
       }
      ]
@@ -1617,26 +1588,29 @@
    "results": [
     {
      "check_id": "greeting",
-     "verdict": "not_applicable",
+     "verdict": "pass",
      "severity": "normal",
-     "timestamp": "",
-     "evidence": "",
-     "reason": "Needs manual review: the model gave no quote for something it says was said."
+     "speaker": "agent",
+     "timestamp": "00:00",
+     "evidence": "Thank you for calling Bank Co. This is Limuel. How may I help you today?",
+     "reason": "The agent's greeting gives their own name."
     },
     {
      "check_id": "verify_identity",
      "verdict": "fail",
      "severity": "critical",
-     "timestamp": "00:06",
-     "evidence": "Hi I want to dispute a charge on my card.",
+     "speaker": "agent",
+     "timestamp": "00:09",
+     "evidence": "Sure. What is the card number?",
      "reason": "Card or account details were discussed and the agent never asked an identity question."
     },
     {
      "check_id": "empathy",
      "verdict": "pass",
      "severity": "normal",
-     "timestamp": "00:33",
-     "evidence": "I understand how frustrating that is.",
+     "speaker": "agent",
+     "timestamp": "00:27",
+     "evidence": "I understand how frustrating that is. Let me check the charge for you. I see a charge of $45 on the 3rd of March. Do you recognize that transaction?",
      "reason": "The agent acknowledged how the customer felt."
     },
     {
@@ -1644,36 +1618,39 @@
      "verdict": "fail",
      "severity": "critical",
      "speaker": "agent",
-     "timestamp": "00:21",
-     "evidence": "Okay, so that is 4111 1111 1111 11111 right?",
+     "timestamp": "00:17",
+     "evidence": "Okay, so that is 4111-1111-111111, right?",
      "reason": "Deterministic PII engine: agent spoke a card-length number. The checksum did not match, so a digit may have been misheard."
     },
     {
      "check_id": "no_refund_promise",
-     "verdict": "pass",
+     "verdict": "fail",
      "severity": "normal",
-     "timestamp": "",
-     "evidence": "",
-     "reason": "The agent did not promise a refund."
+     "speaker": "agent",
+     "timestamp": "00:40",
+     "evidence": "I will file a dispute for you right now. You will receive a confirmation message within two business days.",
+     "reason": "The agent promised a refund."
     },
     {
      "check_id": "further_help",
      "verdict": "pass",
      "severity": "normal",
-     "timestamp": "00:57",
+     "speaker": "agent",
+     "timestamp": "00:47",
      "evidence": "Is there anything else I can help with today?",
      "reason": "The agent offered further help."
     },
     {
      "check_id": "closing",
-     "verdict": "fail",
+     "verdict": "pass",
      "severity": "normal",
-     "timestamp": "",
-     "evidence": "",
-     "reason": "The agent's last line is missing the company name."
+     "speaker": "agent",
+     "timestamp": "00:52",
+     "evidence": "Thank you for calling Bank Co. Have a great day.",
+     "reason": "The agent's last line thanks the customer and names the company."
     }
    ],
-   "coaching": "You demonstrated great empathy and maintained professionalism well. However, you missed a crucial step by not verifying the customer's identity, which could lead to account misuse. Kindly ensure to verify identities from now on to protect both your and your customer's information."
+   "coaching": "You handled the initial interaction professionally and empathetically. A key area for improvement is verifying the customer's identity before discussing their account. Ensure you ask for and confirm their details to maintain security."
   }
  ]
 }

@@ -6,13 +6,15 @@ into one stereo file: agent on the left channel, customer on the right, which is
 the spec expects call recordings to arrive. They are test files to upload and score:
 the app itself ships with no sample data.
 
-    python3 scripts/make_sample_calls.py
+    python3 scripts/make_sample_calls.py          # the three test recordings in samples/
+    python3 scripts/make_sample_calls.py --demo   # the four the read-only demo plays, in samples/demo/
 
 The voices are synthetic and the calls are scripted. This is demo data, not a benchmark.
 """
 import array
 import json
 import pathlib
+import sys
 import subprocess
 import tempfile
 import wave
@@ -56,6 +58,60 @@ CALLS = {
 }
 
 
+# The read-only demo's recordings: the same scenarios with our own first names as the
+# agents, so the name in the call matches the agent the demo lists it under. 150 is a
+# longer dispute call. `npm run demo:data` scores them with the real pipeline.
+DEMO_CALLS = {
+    "147": {
+        "voices": {"Agent": "Daniel", "Customer": "Karen"},
+        "lines": [
+            ("Agent", "Thank you for calling, this is Ian."),
+            ("Customer", "Hi, I want to dispute a charge on my card."),
+            ("Agent", "Sure! What's the card number?"),
+            ("Customer", "It's 4111 1111 1111 1111.", "It's 4 1 1 1, 1 1 1 1, 1 1 1 1, 1 1 1 1."),
+            ("Agent", "Okay, so that's 4111 1111 1111 1111, right?", "Okay, so that's 4 1 1 1, 1 1 1 1, 1 1 1 1, 1 1 1 1, right?"),
+            ("Agent", "I understand how frustrating that is."),
+            ("Agent", "Is there anything else I can help with?"),
+            ("Agent", "Thanks for calling BankCo, bye!", "Thanks for calling Bank Co, bye!"),
+        ],
+    },
+    "148": {
+        "voices": {"Agent": "Aman", "Customer": "Samantha"},
+        "lines": [
+            ("Agent", "Thank you for calling BankCo, this is Paul. May I have your account ID and date of birth to verify you?", "Thank you for calling Bank Co, this is Paul. May I have your account I D and date of birth to verify you?"),
+            ("Customer", "Sure, it's AC-48291, June 4 1990.", "Sure, it's A C, 4 8 2 9 1. June fourth, nineteen ninety."),
+            ("Agent", "Is there anything else I can help with? Thanks for calling BankCo!", "Is there anything else I can help with? Thanks for calling Bank Co!"),
+        ],
+    },
+    "149": {
+        "voices": {"Agent": "Rishi", "Customer": "Karen"},
+        "lines": [
+            ("Agent", "Hello, how can I help?"),
+            ("Customer", "This is so frustrating, nobody helps me."),
+            ("Agent", "Okay noted.", "Okay. Noted."),
+        ],
+    },
+    "150": {
+        "voices": {"Agent": "Daniel", "Customer": "Samantha"},
+        "lines": [
+            ("Agent", "Thank you for calling BankCo, this is Limuel. How may I help you today?", "Thank you for calling Bank Co, this is Limuel. How may I help you today?"),
+            ("Customer", "Hi, I want to dispute a charge on my card."),
+            ("Agent", "Sure. What is the card number?"),
+            ("Customer", "It is 4111 1111 1111 1111.", "It is 4 1 1 1, 1 1 1 1, 1 1 1 1, 1 1 1 1."),
+            ("Agent", "Okay, so that is 4111 1111 1111 1111, right?", "Okay, so that is 4 1 1 1, 1 1 1 1, 1 1 1 1, 1 1 1 1, right?"),
+            ("Customer", "Yes, that is correct."),
+            ("Agent", "I understand how frustrating that is. Let me check the charge for you."),
+            ("Agent", "I see a charge of 45 dollars on March 3rd. Do you recognize that transaction?"),
+            ("Customer", "No, I never made that purchase."),
+            ("Agent", "I will file a dispute for you right now. You will receive a confirmation message within two business days."),
+            ("Agent", "Is there anything else I can help with today?"),
+            ("Customer", "No, that is all."),
+            ("Agent", "Thank you for calling BankCo. Have a great day.", "Thank you for calling Bank Co. Have a great day."),
+        ],
+    },
+}
+
+
 def speak(voice: str, text: str, tmp: pathlib.Path) -> array.array:
     aiff, wav = tmp / "line.aiff", tmp / "line.wav"
     subprocess.run(["say", "-v", voice, "-o", str(aiff), text], check=True)
@@ -70,11 +126,13 @@ def stamp(seconds: float) -> str:
 
 
 def main() -> None:
-    OUT.mkdir(parents=True, exist_ok=True)
+    demo = "--demo" in sys.argv
+    calls, out = (DEMO_CALLS, OUT / "demo") if demo else (CALLS, OUT)
+    out.mkdir(parents=True, exist_ok=True)
     timings = {}
     with tempfile.TemporaryDirectory() as d:
         tmp = pathlib.Path(d)
-        for call_id, call in CALLS.items():
+        for call_id, call in calls.items():
             left, right = array.array("h"), array.array("h")
             silence = lambda secs: array.array("h", [0] * int(secs * RATE))
             left.extend(silence(LEAD_IN)); right.extend(silence(LEAD_IN))
@@ -92,7 +150,7 @@ def main() -> None:
             with wave.open(str(wav), "wb") as w:
                 w.setnchannels(2); w.setsampwidth(2); w.setframerate(RATE)
                 w.writeframes(stereo.tobytes())
-            subprocess.run(["afconvert", "-f", "m4af", "-d", "aac", "-b", "64000", str(wav), str(OUT / f"call-{call_id}.m4a")], check=True)
+            subprocess.run(["afconvert", "-f", "m4af", "-d", "aac", "-b", "64000", str(wav), str(out / f"call-{call_id}.m4a")], check=True)
             total = int(len(left) / RATE)  # the encoded file can run up to a second longer
             timings[call_id] = {"duration": f"{total // 60}:{total % 60:02d}", "lines": starts}
     print(json.dumps(timings, indent=2))
