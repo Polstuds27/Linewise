@@ -35,6 +35,70 @@ const hiddenLine = call.lines.map((l) => ({ ...l, shown: redactPII(l.text, call.
 const SCORED_ON = new Date(`${DEMO_SCORED_ON}T00:00:00`).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
 const firstFlag = flags.find((f) => f.critical) ?? flags[0];
 
+// The featured call drawn the way the logo describes it: the lines are the call, the dot
+// is the moment worth hearing. Every bar is one word the pipeline transcribed, placed at
+// the time it was said, as tall as the word is long: the agent above the line, the customer
+// below it. A picture to look at, not a control.
+const LINE_W = 300;
+const LINE_H = 132;
+const MID = LINE_H / 2;
+const callSeconds = seconds(call.duration);
+const at = (t: number) => (t / callSeconds) * LINE_W;
+// Thin bars 2.4 units apart, like the app's waveform. A word fills the bars under its own
+// time span; a longer word stands taller.
+const PITCH = 2.4;
+const wordBars = call.lines.flatMap((l) =>
+  (l.words ?? []).flatMap((w, n) => {
+    const from = Math.ceil(at(w.start) / PITCH);
+    const to = Math.max(from, Math.floor((at(w.end) - 0.6) / PITCH));
+    const tall = 9 + Math.min(w.text.length, 11) * 4;
+    return Array.from({ length: to - from + 1 }, (_, i) => ({
+      x: (from + i) * PITCH,
+      height: tall * (0.5 + 0.5 * Math.abs(Math.sin((n + 1) * 2.3 + i * 1.7))),
+      up: l.speaker !== "Customer",
+    }));
+  }),
+);
+
+function CallAsLine({ className }: { className?: string }) {
+  return (
+    <figure className={cn("flex flex-col gap-6", className)}>
+      <div className="relative">
+        <span className="label absolute top-0 left-0 text-muted-foreground">Agent</span>
+        <span className="label absolute bottom-0 left-0 text-muted-foreground">Customer</span>
+        <svg viewBox={`0 0 ${LINE_W} ${LINE_H}`} preserveAspectRatio="none" role="img" aria-label={`${callTitle(call)} drawn as a line of words, with ${flags.length} flagged moments`} className="h-56 w-full overflow-visible sm:h-64">
+          {wordBars.map((b, i) => (
+            <rect key={i} x={b.x} y={b.up ? MID - b.height : MID} width={PITCH / 2} height={b.height} className="fill-foreground" />
+          ))}
+          <line x1="0" x2={LINE_W} y1={MID} y2={MID} className="stroke-background" strokeWidth="3" vectorEffect="non-scaling-stroke" />
+          <line x1="0" x2={LINE_W} y1={MID} y2={MID} className="stroke-foreground" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+          {flags.map((f) => (
+            <line key={f.id} x1={at(f.seconds)} x2={at(f.seconds)} y1="0" y2={LINE_H} className="stroke-destructive" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+          ))}
+        </svg>
+        {firstFlag && <span aria-hidden className="absolute top-1/2 size-3 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary" style={{ left: `${(firstFlag.seconds / callSeconds) * 100}%` }} />}
+      </div>
+      {firstFlag && (
+        <figcaption className="flex flex-col gap-2 border-t border-foreground pt-4">
+          <p className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+            <span className="flex items-center gap-1.5 text-sm font-medium text-destructive">
+              <XIcon aria-hidden className="size-3.5" />
+              {firstFlag.critical ? "Critical" : "Fail"} at {firstFlag.ts}
+            </span>
+            <Badge variant="destructive">
+              {grade.score} / 100 · {STATUS_LABEL[grade.status]}
+            </Badge>
+          </p>
+          <p className="text-xl font-medium tracking-tight">{firstFlag.label}</p>
+          <p className="label max-w-[52ch] text-muted-foreground">
+            {callTitle(call)}, {call.duration} long. The bars are the words Linewise transcribed, agent above the line and customer below. The red lines are the moments it flagged, and the dot is the one to hear first.
+          </p>
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+
 const SECTION = "grid gap-x-10 gap-y-10 border-t border-border py-20 sm:py-28 lg:grid-cols-12";
 const HEADING = "display text-4xl sm:text-5xl";
 const LEAD = "max-w-[44ch] text-lg leading-relaxed text-muted-foreground";
@@ -315,13 +379,16 @@ export function Landing({ local }: { local: boolean }) {
           </div>
         </section>
 
-        <section className="border-t border-foreground py-20 sm:py-28">
-          <h2 className="display max-w-[16ch] text-5xl sm:text-7xl">Open the {DEMO_CALLS.length} test calls yourself.</h2>
-          <p className={cn(LEAD, "mt-8")}>Play them, click the flags, confirm or dismiss a verdict, change a rule's weight, and download a redacted report. Uploading is off in the demo: scoring your own recordings happens on your own machine.</p>
-          <div className="mt-10 flex flex-wrap items-center gap-3">
-            <a href="#/demo" className={cn(buttonVariants({ size: "lg" }))}>Try the demo</a>
-            <a href={REPO_URL} target="_blank" rel="noreferrer" className={cn(buttonVariants({ variant: "outline", size: "lg" }))}>Run it yourself</a>
+        <section className="grid gap-x-10 gap-y-14 border-t border-foreground py-20 sm:py-28 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <h2 className="display max-w-[16ch] text-5xl sm:text-7xl">Open the {DEMO_CALLS.length} test calls yourself.</h2>
+            <p className={cn(LEAD, "mt-8")}>Play them, click the flags, confirm or dismiss a verdict, change a rule's weight, and download a redacted report. Uploading is off in the demo: scoring your own recordings happens on your own machine.</p>
+            <div className="mt-10 flex flex-wrap items-center gap-3">
+              <a href="#/demo" className={cn(buttonVariants({ size: "lg" }))}>Try the demo</a>
+              <a href={REPO_URL} target="_blank" rel="noreferrer" className={cn(buttonVariants({ variant: "outline", size: "lg" }))}>Run it yourself</a>
+            </div>
           </div>
+          <CallAsLine className="self-end lg:col-span-5" />
         </section>
       </main>
 
