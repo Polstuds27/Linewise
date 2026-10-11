@@ -2,7 +2,7 @@
 
 Local-AI quality checks for call center calls. Formerly QA Sentinel.
 
-AppBuildersPH Hackathon 2026, Local AI track. Team Busseng.
+**6th place at the AppBuildersPH Hackathon 2026**, out of 1,200+ developers and 400+ teams. Local AI track, Team Busseng.
 
 | | |
 |---|---|
@@ -312,3 +312,17 @@ has regressed. It is not an accuracy rate for real calls, and we do not claim on
 ## Team
 
 Team Busseng: John Patrick Soriaga, Paul Adrianne Mojal, James Ian Antonio and Limuel Camangon.
+
+## Hackathon result
+
+Linewise placed **6th out of 1,200+ developers and 400+ teams** at the AppBuildersPH
+Hackathon 2026 (October 9–10, 2026, Cyberzone, SM Makati), in the Local AI track.
+
+Each member's certificate of participation from App Builders PH. Click one to open the PDF.
+
+| | |
+|---|---|
+| [![Certificate of participation: John Patrick Soriaga](docs/certificates/patrick-certificate.png)](docs/certificates/patrick-certificate.pdf) | [![Certificate of participation: Paul Adrianne Mojal](docs/certificates/paul-certificate.png)](docs/certificates/paul-certificate.pdf) |
+| John Patrick Soriaga | Paul Adrianne Mojal |
+| [![Certificate of participation: James Ian Antonio](docs/certificates/ian-certificate.png)](docs/certificates/ian-certificate.pdf) | [![Certificate of participation: Limuel Camangon](docs/certificates/limuel-certificate.png)](docs/certificates/limuel-certificate.pdf) |
+| James Ian Antonio | Limuel Camangon |
